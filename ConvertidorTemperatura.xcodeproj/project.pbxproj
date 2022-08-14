@@ -15,7 +15,6 @@
 		B8670B4928A9639E00B5974A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8670B4728A9639E00B5974A /* LaunchScreen.storyboard */; };
 		B8670B5428A9639F00B5974A /* ConvertidorTemperaturaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8670B5328A9639F00B5974A /* ConvertidorTemperaturaTests.swift */; };
 		B8670B5E28A9639F00B5974A /* ConvertidorTemperaturaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8670B5D28A9639F00B5974A /* ConvertidorTemperaturaUITests.swift */; };
-		B8670B6028A9639F00B5974A /* ConvertidorTemperaturaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8670B5F28A9639F00B5974A /* ConvertidorTemperaturaUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		B8670B5328A9639F00B5974A /* ConvertidorTemperaturaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertidorTemperaturaTests.swift; sourceTree = "<group>"; };
 		B8670B5928A9639F00B5974A /* ConvertidorTemperaturaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConvertidorTemperaturaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8670B5D28A9639F00B5974A /* ConvertidorTemperaturaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertidorTemperaturaUITests.swift; sourceTree = "<group>"; };
-		B8670B5F28A9639F00B5974A /* ConvertidorTemperaturaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertidorTemperaturaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				B8670B5D28A9639F00B5974A /* ConvertidorTemperaturaUITests.swift */,
-				B8670B5F28A9639F00B5974A /* ConvertidorTemperaturaUITestsLaunchTests.swift */,
 			);
 			path = ConvertidorTemperaturaUITests;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8670B5E28A9639F00B5974A /* ConvertidorTemperaturaUITests.swift in Sources */,
-				B8670B6028A9639F00B5974A /* ConvertidorTemperaturaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

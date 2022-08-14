@@ -46,6 +46,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wi3-RW-bV7">
                                                 <rect key="frame" x="0.0" y="21" width="352" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="campoGradosCentigrados"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -71,6 +72,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d73-xK-5Qb">
                                                 <rect key="frame" x="0.0" y="21" width="352" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="campoGradosFahrenheit"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -95,6 +97,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Convertir">
                                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="convertir:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEl-ic-jNl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,6 +141,10 @@
                             <constraint firstItem="twb-DE-W5x" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rEB-I4-ouj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celsiusTextField" destination="Wi3-RW-bV7" id="plV-L3-OZ7"/>
+                        <outlet property="fahrenheitTextField" destination="d73-xK-5Qb" id="s2w-sa-AlI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
