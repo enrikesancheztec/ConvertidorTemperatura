@@ -17,7 +17,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func convertir(_ sender: UIButton) {
-        fahrenheitTextField.text = "32.0"
+        fahrenheitTextField.text = ""
+        let convertir = ConvertidorTemperatura()
+        
+        if let valorCelsius = celsiusTextField.text {
+            if !valorCelsius.isEmpty {
+                let valorFahrenheit = convertir.convertir(temperatura: Temperatura(valor: Float16(valorCelsius)!, unidad: Temperatura.Unidad.CELSIUS), unidadAConvertir: Temperatura.Unidad.FAHRENHEIT)
+                print("Farenheit " + String(valorFahrenheit.valor))
+                fahrenheitTextField.text = String(valorFahrenheit.valor)
+            } else {
+                print("Valor Celsius esta vacio")
+            }
+        }
     }
 }
 
