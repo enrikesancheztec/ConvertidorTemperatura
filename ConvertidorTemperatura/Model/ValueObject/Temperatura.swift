@@ -8,7 +8,7 @@
 import Foundation
 
 /// ValueObject para manejar los datos que pertenecen a una Temperatura, como son valor y unidad
-public class Temperatura {
+public class Temperatura : Codable {
     public let valor : Float16
     public let unidad : Unidad
     
@@ -22,7 +22,7 @@ public class Temperatura {
     }
     
     /// Enumeracion que me limita los posibles valores que seran aceptados como unidad de temperatura
-    public enum Unidad {
+    public enum Unidad: String, Codable {
         case FAHRENHEIT
         case CELSIUS
     }

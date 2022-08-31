@@ -29,4 +29,41 @@ class TemperaturaTests: XCTestCase {
         XCTAssertEqual(16, temperatura.valor)
         XCTAssertEqual(Temperatura.Unidad.CELSIUS, temperatura.unidad)
     }
+
+    func testEncode() throws {
+        // Given
+        let temperatura = Temperatura.init(valor: 20, unidad: Temperatura.Unidad.CELSIUS)
+        
+        do {
+            // When
+            let resultJson = try JSONEncoder().encode(temperatura)
+            
+            // Then
+            let expectedJson = "{\"valor\":20,\"unidad\":\"CELSIUS\"}".data(using: .utf8)!
+            
+            XCTAssertEqual(resultJson, expectedJson)
+        } catch {
+            XCTFail("error info: \(error)")
+        }
+    }
+
+    func testDecode() throws {
+        // Given
+        let json = """
+            {
+                "valor": 20,
+                "unidad": "CELSIUS"
+            }
+        """.data(using: .utf8)!
+        do {
+            // When
+            let temperatura = try JSONDecoder().decode(Temperatura.self, from: json)
+            
+            // Then
+            XCTAssertEqual(temperatura.valor, 20)
+            XCTAssertEqual(temperatura.unidad, Temperatura.Unidad.CELSIUS)
+        } catch {
+            XCTFail("error info: \(error)")
+        }
+    }
 }
