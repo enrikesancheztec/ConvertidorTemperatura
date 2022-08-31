@@ -34,8 +34,12 @@ class ConvertidorTemperaturaUITests: XCTestCase {
         celsiusTextField.tap()
         celsiusTextField.typeText("0")
         
+        let noVacioPredicate = NSPredicate(format: "value != %@", "")
+        let convertirExpectation = XCTNSPredicateExpectation(predicate: noVacioPredicate, object: fahrenheitTextField)
+        
         // WHEN
         app.staticTexts["Convertir"].tap()
+        wait(for: [convertirExpectation], timeout: 10.0)
         
         // THEN
         XCTAssertEqual(fahrenheitTextField.value as! String, "32.0")

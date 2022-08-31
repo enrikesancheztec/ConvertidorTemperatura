@@ -18,13 +18,16 @@ class ViewController: UIViewController {
 
     @IBAction func convertir(_ sender: UIButton) {
         fahrenheitTextField.text = ""
-        let convertir = ConvertidorTemperatura()
+        let servicio = ConvertidorTemperaturaService()
         
         if let valorCelsius = celsiusTextField.text {
             if !valorCelsius.isEmpty {
-                let valorFahrenheit = convertir.convertir(temperatura: Temperatura(valor: Float16(valorCelsius)!, unidad: Temperatura.Unidad.CELSIUS), unidadAConvertir: Temperatura.Unidad.FAHRENHEIT)
-                print("Farenheit " + String(valorFahrenheit.valor))
-                fahrenheitTextField.text = String(valorFahrenheit.valor)
+                servicio.convertirAFahrenheit(temperatura: Temperatura(valor: Float16(valorCelsius)!, unidad: Temperatura.Unidad.CELSIUS)) {
+                    [weak self] (temperaturaFahrenheit) in
+                    DispatchQueue.main.async {
+                        self?.fahrenheitTextField.text = String(temperaturaFahrenheit?.valor ?? 0)                        
+                    }
+                }
             } else {
                 print("Valor Celsius esta vacio")
             }
